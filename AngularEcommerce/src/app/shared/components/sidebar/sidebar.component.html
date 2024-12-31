@@ -1,0 +1,27 @@
+<div class="w-60 h-[calc(100vh-100px)]  m-4 sidebar">
+  <div>
+    <h3 class="text-center p-4 text-md font-bold text-white bg-[#395B64] rounded-tl-lg rounded-tr-lg">
+      Categories
+    </h3>
+    <div *ngFor="let category of groupedCategories" class="border-b border-gray-700/75">
+      <!-- Parent Category -->
+      <div (click)="toggleCategory(category, $event)" 
+           class="py-2 px-4 cursor-pointer hover:bg-[#395b6439] flex justify-between items-center">
+        <span>{{ category.name }}</span>
+        <!-- Add an arrow indicator that rotates when expanded -->
+        <ng-icon name="hugeArrowDown01" *ngIf="category.children?.length" 
+              [class.rotate-180]="category.isExpanded"
+              class="transition-transform duration-200">
+        </ng-icon>
+      </div>
+      <!-- Children Categories -->
+      <div *ngIf="category.isExpanded && category.children?.length" 
+           class="pl-6  transition-all duration-200">
+        <div *ngFor="let child of category.children" 
+             class="p-2 hover:bg-[#395b6439] cursor-pointer rounded-l-lg">
+          {{ child.name }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

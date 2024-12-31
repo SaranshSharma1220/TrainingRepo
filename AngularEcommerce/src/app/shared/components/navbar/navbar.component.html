@@ -1,0 +1,30 @@
+<header class="w-full navbar  rounded-none min-h-16">
+    <nav class="flex items-center justify-between py-4 px-20">
+      <h1 class="text-2xl font-extrabold text-white">LOGO</h1>
+      <div class="bg-[#395B64] md:rounded-2xl md:py-1 md:px-4 p-2  rounded-full outline-zinc-500 flex items-center">
+        <ng-icon class="md:mr-4 text-white" name="hugeSearch01"></ng-icon>
+        <input class="bg-[#395B64] outline-none md:block hidden" type="search" placeholder="search...">
+      </div>
+      <ul class="flex justify-between gap-8 items-center">
+          <a class="text-white font-bold flex items-center"><ng-icon class="text-xl cursor-pointer after:content-['Home'] after:bg-zinc-600 after:text-white after:p-2 after:text-xs after:rounded-md after:hidden after:absolute hover:after:block " name="hugeHome01"></ng-icon></a>
+          
+          <a class="text-white font-bold flex items-center"><ng-icon class="text-xl cursor-pointer after:content-['Favorites'] after:bg-zinc-600 after:text-white after:p-2 after:text-xs after:rounded-md after:hidden after:absolute hover:after:block " name="hugeFavourite"></ng-icon></a>
+  
+          @if(isLoggedIn){
+            <!-- <img (click)="onProfileClick()" class="h-10 w-10 object-cover rounded-full cursor-pointer " [src]="imgpath" alt=""> -->
+            <h2 class="text-gray-600 after:content-[''] relative after:absolute after:top-6 after:w-0 hover:after:w-full cursor-pointer after:h-[2px] after:rounded-lg after:bg-cyan-800  after:left-0" (click)="onProfileClick()">Welcome, <span class="text-cyan-800">{{userName}}</span></h2>
+    
+            @if (isProfileMenuOpen) {
+              <ul class="absolute bg-zinc-100 shadow-lg p-4 text-white top-16 right-10">
+                <li><button (click)="onLogout()" class="py-1 px-2 bg-red-700 text-white rounded-md flex items-center hover:bg-red-600 transition-colors text-sm" type="button">Logout <span><ng-icon class="mt-2 ml-2  text-md" name="hugeLogout03"></ng-icon></span></button></li>
+              </ul>
+            }
+            
+  
+          }@else {
+            <button (click)="onLogin()" class="py-1 px-2 text-sm bg-[#395B64] text-white rounded-md flex items-center hover:bg-[#223b42]  transition-colors" type="button">Login <span><ng-icon class=" mt-2 ml-2  text-md" name="hugeLogin03"></ng-icon></span></button>
+          }
+      </ul>
+    </nav>
+  </header>
+  

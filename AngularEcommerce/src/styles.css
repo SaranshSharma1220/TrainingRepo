@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    body {
+        @apply bg-[#2C3333];
+        @apply text-white;
+    }
+}
+
+@layer components{
+    .card,.sidebar,.navbar{
+        @apply bg-[#1A2020];
+        @apply border-none;
+        @apply rounded-lg;
+        @apply shadow-lg;
+    }
+
+    .btn{
+        @apply bg-[#395B64]
+    }
+}
