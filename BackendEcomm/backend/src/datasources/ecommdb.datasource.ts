@@ -5,11 +5,14 @@ const config = {
   name: 'ecommdb',
   connector: 'postgresql',
   url: '',
-  host: 'localhost',
+  host: 'ecommercedb.cf22ioy80xd7.ap-south-1.rds.amazonaws.com',
   port: 5432,
   user: 'postgres',
-  password: 'admin',
-  database: 'ecommbackend'
+  password: '9HpCfG)eZ1mOYv]6pgCTBzwr0Y~e',
+  database: 'ecommdb' ,
+  ssl: {
+    rejectUnauthorized: false, // Use cautiously in production
+  },
 };
 
 // Observe application's life cycle to disconnect the datasource when
