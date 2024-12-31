@@ -14,7 +14,7 @@ import 'swiper/css/pagination';
   styleUrl: './homecarousel.component.css'
 })
 export class HomecarouselComponent implements AfterViewInit {
-  slides = ['https://saransh-ecommbucket.s3.ap-south-1.amazonaws.com/s1.jpg','https://saransh-ecommbucket.s3.ap-south-1.amazonaws.com/s2.jpg','/p3.jpg'];
+  slides = ['https://saransh-ecommbucket.s3.ap-south-1.amazonaws.com/p1.jpg','https://saransh-ecommbucket.s3.ap-south-1.amazonaws.com/p2.jpg','/p3.jpg'];
 
   ngAfterViewInit(): void {
     new Swiper('.mySwiper', {

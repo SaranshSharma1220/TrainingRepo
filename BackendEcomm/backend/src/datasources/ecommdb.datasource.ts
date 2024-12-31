@@ -1,15 +1,18 @@
 import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const config = {
   name: 'ecommdb',
   connector: 'postgresql',
   url: '',
-  host: 'ecommercedb.cf22ioy80xd7.ap-south-1.rds.amazonaws.com',
-  port: 5432,
-  user: 'postgres',
-  password: '9HpCfG)eZ1mOYv]6pgCTBzwr0Y~e',
-  database: 'ecommdb' ,
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
   ssl: {
     rejectUnauthorized: false, // Use cautiously in production
   },
